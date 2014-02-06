@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import *
-from rateme.views import supplierview
+from rateme.views import *
 
-urlpatterns = patterns('',
+urlpatterns = patterns('ratemesite.rateme.views',
+    url(r'^$', index), 
     url(r'^$', supplierview),
 )  

@@ -8,3 +8,9 @@ def supplierview(request):
     template = loader.get_template("supplier.html")
     context = Context({ 'supplier' : supplier})
     return HttpResponse(template.render(context))
+    
+def index(request):
+    supplier = Supplier.objects.all()
+    template = loader.get_template("index.html")
+    context = Context({ 'supplier' : supplier})
+    return HttpResponse(template.render(context))
