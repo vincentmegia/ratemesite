@@ -1,7 +1,8 @@
-from django.conf.urls.defaults import *
+from django.conf.urls import *
 from rateme.views import *
 
 urlpatterns = patterns('ratemesite.rateme.views',
-    url(r'^$', index), 
-    url(r'^$', supplierview),
+    url(r'^$', index, name='index'),
+    url(r'^details/$', details, name='details'),
+    url(r'^tutorial/$', basicgrid, name='basicgrid'),
 )  

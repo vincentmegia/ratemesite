@@ -1,16 +1,29 @@
 # Create your views here.
-from django.template import loader, Context
+from django.shortcuts import render
 from django.http import HttpResponse
 from rateme.models import Supplier
 
-def supplierview(request):
-    supplier = Supplier.objects.all()
-    template = loader.get_template("supplier.html")
-    context = Context({ 'supplier' : supplier})
-    return HttpResponse(template.render(context))
-    
+
+def details(request):
+    '''
+    Handles rateme/details Url
+    '''
+    suppliers = Supplier.objects.all()
+    context = {'suppliers': suppliers}
+    return render(request, 'rateme/supplier.html', context)
+
+
 def index(request):
-    supplier = Supplier.objects.all()
-    template = loader.get_template("index.html")
-    context = Context({ 'supplier' : supplier})
-    return HttpResponse(template.render(context))
+    '''
+    Handles the default rateme/ Url
+    '''
+    suppliers = Supplier.objects.all()
+    output = ','.join([supplier.name for supplier in suppliers])
+    return HttpResponse(output)
+
+
+def basicgrid(request):
+    '''
+    Handles the rateme/basicgrid url
+    '''
+    return render(request, 'rateme/bootstrap.tutorial.grid.html')
