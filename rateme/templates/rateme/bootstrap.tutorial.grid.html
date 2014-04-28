@@ -4,12 +4,40 @@
 <head>
     <title></title>
     <link href="{% static 'rateme/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'rateme/bootstrap/css/bootstrap-theme.min.css' %}" rel="stylesheet">
+    <!--<link href="{% static 'rateme/bootstrap/css/debug.pesticide.css' %}" rel="stylesheet">-->
+    <!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css"
+          rel="stylesheet">-->
 </head>
 <body>
-<div class="row" style="border: 1">
-  <div class="span8" style="border: 1">span8_</div>
-  <div class="span4" style="border: 1">span4_</div>
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6"><h2>Main Content Section</h2></div>
+            <div class="col-md-6"><h2>Sidebar</h2></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="findOrderContainer">
+                    <h3>Find Order</h3>
+                    <form role="form">
+                        <div class="form-group">
+                            <input id="searchAutocomplete"
+                                    type="text"
+                                   class="form-control"
+                                   placeholder="Enter Ticker, Sedol or ISIN">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="{% static 'rateme/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'rateme/bootstrap/js/javascript.ninja-tutorial.js' %}"></script>
+<script src="{% static 'rateme/javascript/views/supplier-view.js' %}"></script>
+<script src="{% static 'rateme/javascript/controllers/supplier-controller.js' %}"></script>
+<script src="{% static 'rateme/javascript/models/supplier.js' %}"></script>
 </html>
