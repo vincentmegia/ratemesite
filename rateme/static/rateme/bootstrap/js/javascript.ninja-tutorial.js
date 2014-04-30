@@ -39,3 +39,11 @@ MethodTest.prototype = {
     }
 };
 alert(methodTest._someState);*/
+
+/*
+var test = new Object();
+test["a"] = "a";
+test["b"] = "b"
+$.each(test, function(key, value){
+   alert("key: " + key + ", value:" + value);
+});*/

@@ -1,11 +1,24 @@
-function SupplierController(view, model) {
+function SupplierController(view, supplierService) {
     this._view = view;
-    this._model = model;
+    this._supplierService = supplierService;
 }
 
 SupplierController.prototype = {
     registerAutocomplete: function() {
-        var autoComplete = this._view.getElement("searchAutocomplete");
-
+        var searchAutoComplete = this._view.getElement("searchAutoComplete");
+        var supplierService = this._supplierService;
+        $("#searchAutocomplete").autocomplete({
+            source : function(request, callback) {
+                supplierService.getSuppliers(callback);
+            }
+        });
     }
 }
+
+$(document).ready(function(){
+    var view = new SupplierView();
+    view.addElement("searchAutocomplete");
+    var supplierService = new SupplierService();
+    var supplierController = new SupplierController(view, supplierService);
+    supplierController.registerAutocomplete();
+});

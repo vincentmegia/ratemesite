@@ -10,8 +10,14 @@ class Item(models.Model):
     def __repr__(self):
         return self.name
 
+    class Meta:
+        abstract = True
 
-class Supplier(Item, models.Model):
+
+class Supplier(Item):
     rating = models.IntegerField()
-    
+
+    class Meta(Item.Meta):
+        db_table = "rateme_supplier";
+
 admin.site.register(Supplier)
