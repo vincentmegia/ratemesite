@@ -2,7 +2,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from rateme.models import Supplier
-from django.core import serializers
+#from django.core import serializers
+#from rateme.utilities import JSON
 
 
 def details(request):
@@ -31,6 +32,11 @@ def basicgrid(request):
 
 
 def suppliersJson(request):
-    suppliers = Supplier.objects.all()
-    supplierjson = serializers.serialize("json", suppliers)
-    return HttpResponse(supplierjson, content_type="application/json")
+    keyword = request.GET["keyword"]
+    try:
+        suppliers = Supplier.objects.filter(name__istartswith=keyword)
+    except Exception as exception:
+        print(exception)
+    #jsonData = serializers.serialize("json", suppliers)
+    jsonData = JSONSerializer().serialize("json", suppliers)
+    return HttpResponse(jsonData, content_type="application/json")

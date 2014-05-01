@@ -9,7 +9,7 @@ SupplierController.prototype = {
         var supplierService = this._supplierService;
         $("#searchAutocomplete").autocomplete({
             source : function(request, callback) {
-                supplierService.getSuppliers(callback);
+                supplierService.getSuppliers(request.term, callback);
             }
         });
     }
