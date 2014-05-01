@@ -3,8 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from rateme.models import Supplier
 #from django.core import serializers
-#from rateme.utilities import JSON
-
+from rateme.utilities.serializers import CleanJsonSerializer
 
 def details(request):
     '''
@@ -31,12 +30,13 @@ def basicgrid(request):
     return render(request, "rateme/bootstrap.tutorial.grid.html")
 
 
-def suppliersJson(request):
+def suppliers_json(request):
     keyword = request.GET["keyword"]
     try:
         suppliers = Supplier.objects.filter(name__istartswith=keyword)
+        serializer = CleanJsonSerializer()
+        json_data = serializer.serialize(suppliers)
     except Exception as exception:
         print(exception)
-    #jsonData = serializers.serialize("json", suppliers)
-    jsonData = JSONSerializer().serialize("json", suppliers)
-    return HttpResponse(jsonData, content_type="application/json")
+
+    return HttpResponse(json_data, content_type="application/json")

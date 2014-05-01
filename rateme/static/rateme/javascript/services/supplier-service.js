@@ -11,9 +11,9 @@ SupplierService.prototype = {
                 var suppliers = new Array();
                 $.each(data, function(index, value){
                     var supplier = new Supplier();
-                    supplier.setRating(value.fields["rating"]);
-                    supplier.setName(value.fields["name"]);
-                    supplier.setCreatedate(value.fields["createdate"]);
+                    supplier.setRating(value.rating);
+                    supplier.setName(value.name);
+                    supplier.setCreatedate(value.createdate);
                     suppliers.push(supplier);
                 });
                 callback(suppliers);
