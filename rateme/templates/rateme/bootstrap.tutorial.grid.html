@@ -34,6 +34,28 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="orderResults">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Order Id</th>
+                                <th>Name</th>
+                                <th>Create Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ supplier.id }}</td>
+                                <td>{{ supplier.name }}</td>
+                                <td>{{ supplier.createdate }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script src="{% static 'rateme/jquery/js/jquery-1.10.2.js' %}"></script>
