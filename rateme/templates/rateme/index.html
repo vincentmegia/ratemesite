@@ -1,10 +1,78 @@
+{% load staticfiles %}
+<!DOCTYPE html>
 <html>
     <head>
-        Default page
+        <link rel="stylesheet"
+              href="{% static 'rateme/owl.carousel.2.0.0-beta.2.1/assets/owl.carousel.min.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'rateme/owl.carousel.2.0.0-beta.2.1/assets/owl.theme.default.min.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'rateme/owl.carousel.2.0.0-beta.2.1/assets/owl.doc.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'rateme/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'rateme/bootstrap/css/bootstrap-theme.min.css' %}">
+        <!--link rel="stylesheet"
+        href="{% static 'rateme/bootstrap/css/debug.pesticide.css' %}"-->
     </head>
     <body>
-        test
-        <h2>{{ supplier.name }} </h2>
-        <h2>{{ supplier.rating }}</h2>
+        <div class="container-fluid" >
+            <section id="demos">
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="owl-carousel">
+                            <div class="item"
+                                 data-hash="generalDiscussion">
+                                <h4>General Discussion</h4>
+                            </div>
+                            <div class="item"
+                                 data-hash="officialAnnouncements">
+                                <h4>Official Annoucements</h4>
+                            </div>
+                            <div class="item"
+                                 data-hash="media">
+                                <h4>Media</h4>
+                            </div>
+                            <div class="item"
+                                 data-hash="otherCategories">
+                                <h4>Other Categories</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div style="margin-top: 2rem">
+                            <nav>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li class="active">
+                                        <a href="#generalDiscussion">General Discussion</a>
+                                        <span class="badge pull-right">42</span>
+                                    </li>
+                                    <li><a href="#officialAnnouncements">Official Announcement</a></li>
+                                    <li><a href="#media">Media</a></li>
+                                    <li><a href="#otherCategories">Other Categories</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </body>
+    <script src="{% static 'rateme/jquery/js/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'rateme/owl.carousel.2.0.0-beta.2.1/owl.carousel.min.js' %}"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                center: true,
+                items: 1,
+                stagePadding: 50,
+                smartSpeed: 450,
+                URLhashListener: true,
+                startPosition: "URLHash"
+            });
+        });
+    </script>
 </html>
