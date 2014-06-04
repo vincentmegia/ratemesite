@@ -16,46 +16,112 @@
         href="{% static 'rateme/bootstrap/css/debug.pesticide.css' %}"-->
     </head>
     <body>
-        <div class="container-fluid" >
-            <section id="demos">
-                <div class="row">
-                    <div class="col-md-10">
-                        <div class="owl-carousel">
-                            <div class="item"
-                                 data-hash="generalDiscussion">
-                                <h4>General Discussion</h4>
-                            </div>
-                            <div class="item"
-                                 data-hash="officialAnnouncements">
-                                <h4>Official Annoucements</h4>
-                            </div>
-                            <div class="item"
-                                 data-hash="media">
-                                <h4>Media</h4>
-                            </div>
-                            <div class="item"
-                                 data-hash="otherCategories">
-                                <h4>Other Categories</h4>
+        <div class="container" >
+            <!-- stellar header -->
+            <div id="header" class="row page-header">
+                <div class="col-md-11">
+                    <div>
+                        <span class="label label-info">Stellar</span>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div>
+                        <span class="label label-info">Login</span>
+                    </div>
+                </div>
+            </div>
+            <div id="navigation-static" class="row">
+                <div class="col-md-12">
+                    <ol class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li class="active">Data</li>
+                    </ol>
+                </div>
+            </div>
+            <div id="content" class="row">
+                <div class="col-md-12">
+                    <section id="demos">
+                        <div class="col-md-10">
+                            <div class="owl-carousel">
+                                <div class="item"
+                                     data-hash="generalDiscussion">
+                                    <h4>General Discussion</h4>
+                                </div>
+                                <div class="item"
+                                     data-hash="officialAnnouncements">
+                                    <h4>Annoucements</h4>
+                                </div>
+                                <div class="item"
+                                     data-hash="media">
+                                    <h4>Media</h4>
+                                </div>
+                                <div class="item"
+                                     data-hash="otherCategories">
+                                    <h4>Other Categories</h4>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div style="margin-top: 2rem">
-                            <nav>
-                                <ul class="nav nav-pills nav-stacked">
-                                    <li class="active">
-                                        <a href="#generalDiscussion">General Discussion</a>
-                                        <span class="badge pull-right">42</span>
-                                    </li>
-                                    <li><a href="#officialAnnouncements">Official Announcement</a></li>
-                                    <li><a href="#media">Media</a></li>
-                                    <li><a href="#otherCategories">Other Categories</a></li>
-                                </ul>
-                            </nav>
+                        <div class="col-md-2">
+                            <div style="margin-top: 2rem;">
+                                <nav role="navigation">
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li class="active">
+                                            <a href="#generalDiscussion">
+                                                <span class="badge">42</span>
+                                                <small>General Discussion</small>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#officialAnnouncements">
+                                                <span class="badge">10</span>
+                                                <small>Announcement</small>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#media">
+                                                <span class="badge">1</span>
+                                                <small>Media</small>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#otherCategories">
+                                                <span class="badge">5</span>
+                                                <small>Other Categories</small>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6  well">
+                    <div id="findOrderContainer">
+                        <div class="input-group">
+                            <input id="searchAutocomplete"
+                                   type="text"
+                                   class="form-control"
+                                   placeholder="Search forum">
+                            <span class="input-group-btn ">
+                                <button id="searchForum" class="btn btn-default glyphicon glyphicon-search button-search" type="button"/></button>
+                            </span>
                         </div>
                     </div>
                 </div>
-            </section>
+                <div class="col-md-3"></div>
+            </div>
+            <!-- footer -->
+            <div id="footer" class="row">
+                <div class="col-md-12">
+                    <div class="">
+                        Version: 0.0.1
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
     <script src="{% static 'rateme/jquery/js/jquery-1.10.2.js' %}"></script>

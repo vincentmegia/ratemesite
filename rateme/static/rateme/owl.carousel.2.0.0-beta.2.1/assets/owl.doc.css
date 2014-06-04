@@ -3,9 +3,9 @@
 }
 
 #demos .owl-carousel .item {
-    height: 20rem;
+    height: 25em;
     width: 100%;
-    background: #4DC7A0;
+    background: steelblue;
     padding: 1rem;
 }
 
@@ -48,12 +48,19 @@
 .navigation {
     display: block;
     height: 235px;
+    margin-top: 10px;
 }
-.navigation a:link, a:visited {
-    height: 50px;
-    line-height: 50px;
+.navigation a:link, a:visited {;
+    line-height: 30px;
     display: block;
     background: #f0ad4e;
+    text-align: left;;
+}
+
+#searchAutocomplete {
     text-align: center;
-    margin-top: 10px;
+}
+
+.button-search {
+    height: 33px;
 }
