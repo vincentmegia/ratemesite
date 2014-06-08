@@ -1,12 +1,14 @@
+
 #demos .owl-carousel {
-    margin: 2rem 0;
+    margin: 4rem 0;
 }
 
 #demos .owl-carousel .item {
-    height: 25em;
-    width: 100%;
-    background: steelblue;
-    padding: 1rem;
+    /*height: 25em;*/
+    border-radius: 4px;
+    padding-top: 10px;
+    padding-left: 10px;
+    background: #FF896B;
 }
 
 #demos .owl-carousel .item h4 {
@@ -15,45 +17,14 @@
     margin-top: 0rem;
 }
 
-#demos .owl-carousel .item-video {
-    height: 300px;
-}
-
-#demos #setup {
-    margin-top: 4rem;
-}
-
-#demos .demo-list h5 {
-    margin: 0;
-}
-/* demos */
-.article{
-	background: #008cba;
-	height: 180px;
-	padding: 10px;
-}
-
-.article-video{
-	height: 180px;
-}
-
-.article h2{
-	color: #FFF;
-}
-
-.article p{
-	color: #FFF;
-}
-
 .navigation {
     display: block;
     height: 235px;
-    margin-top: 10px;
 }
 .navigation a:link, a:visited {;
     line-height: 30px;
     display: block;
-    background: #f0ad4e;
+    background: #FF896B;
     text-align: left;;
 }
 
@@ -63,4 +34,57 @@
 
 .button-search {
     height: 33px;
+}
+
+/* how to override bootstrap css */
+#rankedCategory {
+    margin: 4rem 0;
+}
+#rankedCategory .nav-pills > .active > a {
+    background: #FF896B;
+}
+#rankedCategory .nav-pills > .active > a:hover,
+#rankedCategory .nav-pills > li > a:hover {
+    font-weight: bold;
+
+}
+
+.stellar-page-header {
+    background-color: #FF645C;
+    display: block;
+}
+.stellar-page-header .label-xx-large {
+    color: #f5f5f5;
+    line-height: 90px;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+.stellar-page-header .label-small {
+    color: #f5f5f5;
+    line-height: 50px;
+    font-weight: bolder;
+    font-size: medium;
+    text-align: right;
+}
+
+/*override breadcrumb color*/
+.breadcrumb {
+    background-color: #ff5046;
+    color: white;
+}
+.breadcrumb > li > a {
+    color: #f5f5f5;
+}
+.breadcrumb > li + li:before {
+    padding: 0 5px;
+    color: #f5f5f5;
+    content: ">";
+}
+.breadcrumb > .active {
+    color: white;
+    font-weight: bolder;
+}
+.row-red {
+    background-color: #FF645C;
 }
