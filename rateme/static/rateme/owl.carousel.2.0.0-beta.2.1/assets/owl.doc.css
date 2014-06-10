@@ -11,17 +11,27 @@
     background: #FF896B;
 }
 
-#demos .owl-carousel .item h4 {
+#demos .owl-carousel .item div {
+    height: 40px;
+    background: #ff5046;
     color: #FFF;
-    font-weight: 400;
+    font-weight: bold;
     margin-top: 0rem;
+    line-height: 40px;
+    border-radius: 4px 4px 4px 4px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+#demos .owl-carousel .item div:hover {
+    font-size: large;
 }
 
 .navigation {
     display: block;
     height: 235px;
 }
-.navigation a:link, a:visited {;
+.navigation a:link, a:visited {
     line-height: 30px;
     display: block;
     background: #FF896B;
@@ -41,12 +51,20 @@
     margin: 4rem 0;
 }
 #rankedCategory .nav-pills > .active > a {
-    background: #FF896B;
+    background-color: #FF896B;
+    font-weight: bold;
 }
 #rankedCategory .nav-pills > .active > a:hover,
 #rankedCategory .nav-pills > li > a:hover {
     font-weight: bold;
-
+    font-size: medium;
+    color: white;
+    background: #FF896B;
+}
+#rankedCategory .nav-pills > .active > a > div {
+    padding-left: 5px;
+        background: #ff5046;
+    border-radius: 4px 4px 4px 4px;
 }
 
 .stellar-page-header {
