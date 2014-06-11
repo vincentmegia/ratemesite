@@ -12,6 +12,8 @@
         <link rel="stylesheet"
               href="{% static 'rateme/bootstrap/css/bootstrap-theme.min.css' %}">
         <link rel="stylesheet"
+              href="{% static 'rateme/Hover-master/css/hover-min.css' %}">
+        <link rel="stylesheet"
               href="{% static 'rateme/owl.carousel.2.0.0-beta.2.1/assets/owl.doc.css' %}">
 
         <!--link rel="stylesheet"
@@ -40,7 +42,7 @@
             <div id="content" class="row">
                 <div class="col-md-12">
                     <section id="demos">
-                        <div class="col-md-10">
+                        <div id="left-content" class="col-md-10 row-white-border">
                             <div class="owl-carousel">
                                 <div class="item"
                                      data-hash="generalDiscussion">
@@ -64,15 +66,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div id="right-content" class="col-md-2 row-white-border">
+                                <div class="block-red">Top Ranked Categories</div>
                                 <nav id="rankedCategory" role="navigation">
                                     <ul class="nav nav-pills nav-stacked">
                                         <li class="active">
                                             <a href="#generalDiscussion">
-                                                <div>
                                                 <span class="badge">42</span>
                                                 <div>General Discussion</div>
-                                                    </div>
                                             </a>
                                         </li>
                                         <li>
