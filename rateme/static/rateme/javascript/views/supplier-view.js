@@ -4,20 +4,22 @@ function SupplierView() {
 }
 
 SupplierView.prototype = {
-    addElement: function(element) {
-        if (!this._elements[element.id])
-            this._elements[element.id] = element;
+    addElementById: function(name) {
+
+        if (!this._elements.hasOwnProperty(name)) {
+            this._elements[name] = document.getElementById(name);
+            alert("setting value");
+            alert(this._elements[name]);
+        }
     },
     removeElement: function(element) {
         if (this._elements[element.id])
             this._elements[element] = undefined;
     },
     getElement: function(name) {
-        var control = null;
-        $.each(this._elements, function(key, value) {
-            if (name == key)
-                control = this._elements[key];
-        });
-        return control;
+        alert(this._elements["searchAutoComplete"]);
+        if (!this._elements[name])
+            alert("do something with error later");
+        return this._elements[name];
     }
 }

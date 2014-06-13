@@ -1,0 +1,31 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Pragma" content="no-cache">
+        <link rel="stylesheet"
+              href="{% static 'rateme/css/owl.carousel.min.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'rateme/css/owl.theme.default.min.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'rateme/css/bootstrap.min.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'rateme/css/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'rateme/css/owl.doc.css' %}">
+        <!--link rel="stylesheet"
+        href="{% static 'rateme/css/debug.pesticide.css' %}"-->
+    </head>
+    <body>
+        <div class="container-fluid" >
+            {% include "rateme/header.html" %}
+            {% block content %} {% endblock %}
+            {% include 'rateme/footer.html' %}
+        </div>
+    </body>
+    <script type="application/javascript" src="{% static 'rateme/javascript/third-party/jquery-1.10.2.js' %}"></script>
+    <script type="application/javascript" src="{% static 'rateme/javascript/third-party/jquery-ui-1.10.4.custom.js' %}"></script>
+    <script type="application/javascript" src="{% static 'rateme/javascript/third-party/owl.carousel.min.js' %}"></script>
+    <!-- for extra script -->
+    {% block script  %} {% endblock %}
+</html>

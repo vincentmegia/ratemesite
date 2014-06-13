@@ -6,30 +6,39 @@ function SupplierController(view, supplierService) {
 SupplierController.prototype = {
     initialize: function() {
         this.registerAutocomplete();
-        this.registerSlider()
+        this.registerCarousel();
     },
     registerAutocomplete: function() {
-        var searchAutoComplete = this._view.getElement("searchAutoComplete");
+        /*var searchAutoComplete = this._view.getElement("searchAutoComplete");*/
+        /*todo use a MVC javascript framework*/
         var supplierService = this._supplierService;
-        $("#searchAutocomplete").autocomplete({
+        $("searchAutoComplete").autocomplete({
             source : function(request, callback) {
                 supplierService.getSuppliers(request.term, callback);
             }
         });
     },
-    registerSlider: function() {
-        $(document).ready(function($){
-            var options = { $AutoPlay: true };
-            var slider = new $JssorSlider$("sliderContainer", options);
+    registerCarousel: function() {
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                center: true,
+                items: 1,
+                stagePadding: 50,
+                smartSpeed: 700,
+                URLhashListener: true,
+                startPosition: "URLHash"
+            });
         });
     }
 }
 
 $(document).ready(function(){
     var view = new SupplierView();
-    view.addElement("searchAutocomplete");
-    view.addElement("sliderContainer");
+    view.addElementById("searchAutocomplete");
     var supplierService = new SupplierService();
     var supplierController = new SupplierController(view, supplierService);
+
     supplierController.initialize();
 });
