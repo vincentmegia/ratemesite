@@ -6,5 +6,5 @@ urlpatterns = patterns('ratemesite.rateme.views',
     url(r'^details/$', details, name='details'),
     url(r'^tutorial/$', basicgrid, name='basic.grid'),
     url(r'^forum/$', forum_home, name='forum.home'),
-    url(r'^details/suppliers.json$', suppliers_json, name='suppliers.json')
+    url(r'^forum/suppliers.json$', suppliers_json, name='suppliers.json')
 )  

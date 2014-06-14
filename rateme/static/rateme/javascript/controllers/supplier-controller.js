@@ -12,7 +12,7 @@ SupplierController.prototype = {
         /*var searchAutoComplete = this._view.getElement("searchAutoComplete");*/
         /*todo use a MVC javascript framework*/
         var supplierService = this._supplierService;
-        $("searchAutoComplete").autocomplete({
+        $("#searchAutoComplete").autocomplete({
             source : function(request, callback) {
                 supplierService.getSuppliers(request.term, callback);
             }
@@ -39,6 +39,5 @@ $(document).ready(function(){
     view.addElementById("searchAutocomplete");
     var supplierService = new SupplierService();
     var supplierController = new SupplierController(view, supplierService);
-
     supplierController.initialize();
 });

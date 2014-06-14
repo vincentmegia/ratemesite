@@ -1,78 +1,45 @@
-{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
-    <link href="{% static 'rateme/bootstrap/../../static/rateme/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'rateme/bootstrap/../../static/rateme/css/bootstrap-theme.min.css' %}" rel="stylesheet">
-    <link href="{% static 'rateme/jquery/css/../../static/rateme/css/ui-lightness/jquery-ui-1.10.4.custom.min.css' %}" rel="stylesheet">
-    <!--<link href="{% static 'rateme/bootstrap/../../static/rateme/css/debug.pesticide.css' %}" rel="stylesheet">-->
-    <!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css"
-          rel="stylesheet">-->
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script>
+    $(function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#searchAutoComplete" ).autocomplete({
+      source: availableTags
+    });
+  });
+</script>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div id="sliderContainer" style="position: relative; top: 0px; left: 0px; width: 600px; height: 300px;">
-    <!-- Slides Container -->
-    <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 600px; height: 300px;">
-                        <div><h1>content 1</h1></div>
-                        <div><h1>content 2</h1></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6"><h2>Sidebar</h2></div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div id="findOrderContainer">
-                    <h3>Find Order</h3>
-                    <form role="form">
-                        <div class="form-group">
-                            <input id="searchAutocomplete"
-                                    type="text"
-                                   class="form-control"
-                                   placeholder="Enter Ticker, Sedol or ISIN">
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div id="orderResults">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Order Id</th>
-                                <th>Name</th>
-                                <th>Create Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{{ supplier.id }}</td>
-                                <td>{{ supplier.name }}</td>
-                                <td>{{ supplier.createdate }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+    <input id="searchAutoComplete">
+
 </body>
-<script src="{% static 'rateme/jquery/js/../../static/rateme/javascript/third-party/jquery-1.10.2.js' %}"></script>
-<script src="{% static 'rateme/jquery/js/../../static/rateme/javascript/third-party/jquery-ui-1.10.4.custom.js' %}"></script>
-<script src="{% static 'rateme/bootstrap/js/../../static/rateme/javascript/third-party/bootstrap.min.js' %}"></script>
-<script src="{% static 'rateme/bootstrap/js/javascript.ninja-tutorial.js' %}"></script>
-<script src="{% static 'rateme/javascript/views/supplier-view.js' %}"></script>
-<script src="{% static 'rateme/javascript/controllers/supplier-controller.js' %}"></script>
-<script src="{% static 'rateme/javascript/models/supplier.js' %}"></script>
-<script src="{% static 'rateme/javascript/services/supplier-service.js' %}"></script>
-<script src="{% static 'rateme/slider.js-master/js/jssor.slider.mini.js' %}"></script>
+
 </html>

@@ -1,11 +1,13 @@
 function SupplierService() {
-    this._suppliersJsonUrl = "rateme/details/suppliers.json";
+    this._suppliersJsonUrl = "suppliers.json";
 }
 
 SupplierService.prototype = {
     getSuppliers: function(keyword, callback) {
+        //rateme/details/suppliers.json?keyword=em
+        var url = this._suppliersJsonUrl;
         $.ajax({
-            url: "/rateme/details/suppliers.json",
+            url: url,
             data: { keyword: keyword },
             success: function(data, textStatus, jqXHR) {
                 var suppliers = new Array();

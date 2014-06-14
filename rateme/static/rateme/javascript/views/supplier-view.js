@@ -8,8 +8,6 @@ SupplierView.prototype = {
 
         if (!this._elements.hasOwnProperty(name)) {
             this._elements[name] = document.getElementById(name);
-            alert("setting value");
-            alert(this._elements[name]);
         }
     },
     removeElement: function(element) {
@@ -17,9 +15,8 @@ SupplierView.prototype = {
             this._elements[element] = undefined;
     },
     getElement: function(name) {
-        alert(this._elements["searchAutoComplete"]);
         if (!this._elements[name])
-            alert("do something with error later");
+            throw DOMException;
         return this._elements[name];
     }
 }
